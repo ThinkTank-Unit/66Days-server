@@ -17,5 +17,9 @@ public class HabitRes {
 	private LocalTime reminderTime;
 
 	public HabitRes(Long habitID, String habitName, LocalDate startDate, LocalDate endDate) {
+		this.habitID = habitID;
+		this.habitName = habitName;
+		this.startDate = startDate;
+		this.endDate = endDate;
 	}
 }

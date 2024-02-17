@@ -13,5 +13,6 @@ public class HabitReq {
 	private String habitName;
 	private LocalDate startDate;
 	private LocalTime reminderTime;
+	// endDate는 startDate로부터 66일 후로 자동 계산되므로 포함하지 않음
 
 }
