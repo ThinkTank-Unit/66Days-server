@@ -23,13 +23,9 @@ public class HabitServiceImpl implements HabitService {
 		Habit habit = new Habit();
 		habit.setHabitName(habitReq.getHabitName());
 		habit.setStartDate(habitReq.getStartDate());
-		habit.setEndDate(habitReq.getStartDate().plusDays(66));
-
-		try {
-			return habitRepository.save(habit);
-		} catch (Exception e) {
-			throw new HabitException(HabitErrorType.HABIT_CREATION_FAILED);
-		}
+		habit.setReminderTime(habitReq.getReminderTime());
+		// endDate는 prePersist()에서 자동 계산됨
+		return habitRepository.save(habit);
 	}
 
 	@Override
@@ -39,12 +35,8 @@ public class HabitServiceImpl implements HabitService {
 
 		habit.setHabitName(habitReq.getHabitName());
 		habit.setStartDate(habitReq.getStartDate());
-
-		try {
-			return habitRepository.save(habit);
-		} catch (Exception e) {
-			throw new HabitException(HabitErrorType.HABIT_UPDATE_FAILED);
-		}
+		habit.setReminderTime(habitReq.getReminderTime());
+		return habitRepository.save(habit);
 	}
 
 	@Override
