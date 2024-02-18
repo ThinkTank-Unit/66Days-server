@@ -28,7 +28,8 @@ public class Notification extends BaseTime {
 	@JoinColumn(name = "habitID", nullable = false)
 	private Habit habit;
 
-	private String notificationType;
+	@Enumerated(EnumType.STRING)
+	private NotificationStyle notificationType;
 
 	private String message;
 
