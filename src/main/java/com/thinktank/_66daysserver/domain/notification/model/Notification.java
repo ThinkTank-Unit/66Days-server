@@ -35,6 +35,7 @@ public class Notification extends BaseTime {
 
 	private LocalDateTime scheduledTime;
 
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private NotificationStatus status;
 
 }
