@@ -22,11 +22,11 @@ public class Notification extends BaseTime {
 
 	@ManyToOne
 	@JoinColumn(name = "userID", nullable = false)
-	private Users users;
+	private Users userId;
 
 	@ManyToOne
 	@JoinColumn(name = "habitID", nullable = false)
-	private Habit habit;
+	private Habit habitId;
 
 	@Enumerated(EnumType.STRING)
 	private NotificationStyle notificationType;
