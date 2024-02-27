@@ -22,18 +22,20 @@ public class Notification extends BaseTime {
 
 	@ManyToOne
 	@JoinColumn(name = "userID", nullable = false)
-	private Users users;
+	private Users userId;
 
 	@ManyToOne
 	@JoinColumn(name = "habitID", nullable = false)
-	private Habit habit;
+	private Habit habitId;
 
-	private String notificationType;
+	@Enumerated(EnumType.STRING)
+	private NotificationStyle notificationType;
 
 	private String message;
 
 	private LocalDateTime scheduledTime;
 
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private NotificationStatus status;
 
 }
