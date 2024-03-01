@@ -10,16 +10,16 @@ import lombok.Setter;
 @Table(name = "users")
 @Getter
 @Setter
+
 public class Users extends BaseTime {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userID;
 
-	private String name;
+    private String name;
 
-	private String email;
+    private String email;
 
-	private String password;
-
+    private String role;
 }
